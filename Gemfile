@@ -44,3 +44,9 @@ group :development,:test do
   gem 'spork', '>=0.9.0.rc2'
   gem 'rspec-rails', :require => false
 end
+
+group :production do
+  # gems specifically for Heroku go here
+  gem "pg"
+end
+
