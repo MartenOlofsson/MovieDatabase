@@ -1,0 +1,29 @@
+<%= render "shared/menu" %>
+
+
+<% @movies.each do |movie| %>
+      <div class="movie">
+
+
+    <h2><%= movie.title %></h2>
+    <% if movie.image.blank?%>
+        <%=link_to(image_tag("/uploads/movie/image/noimage.jpg"), movie)%>
+
+    <% else %>
+            <%=link_to(image_tag(movie.image), movie)%>
+
+    <% end %>
+
+    <td><%= link_to 'Edit', edit_movie_path(movie) %></td>
+    <td><%= link_to 'Destroy', movie, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+</div>
+<% end %>
+
+
+<br />
+
+<%= will_paginate @movies%>
+
+
+<%= link_to 'New Movie', new_movie_path %>

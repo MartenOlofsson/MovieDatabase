@@ -1,0 +1,103 @@
+<%= render "shared/menu" %>
+<p id="notice"><%= notice %></p>
+
+<p>
+
+  <%if @movie.image.blank?%>
+      <img src="/uploads/movie/image/noimage.jpg">
+  <% else %>
+  <img src="<%= @movie.image %>">
+      <%end%>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @movie.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @movie.description %>
+</p>
+
+
+
+<p><%=@grade%></p>
+
+
+<%= form_for([@movie, @movie.votes.build]) do |f| %>
+  <div class="field">
+    <%= f.label :voter %><br />
+    <%= f.text_field :voter %>
+  </div>
+  <div class="field">
+    <%= f.label :grade %><br />
+    <%= f.radio_button :grade, 1 %>
+    <%= f.label(1) %>
+<%= f.radio_button :grade, 2 %>
+ <%= f.label(2) %>
+    <%= f.radio_button :grade, 3 %>
+ <%= f.label(3) %>
+    <%= f.radio_button :grade, 4 %>
+ <%= f.label(4) %>
+    <%= f.radio_button :grade, 5 %>
+ <%= f.label(5) %>
+    <%= f.radio_button :grade, 6 %>
+ <%= f.label(6) %>
+    <%= f.radio_button :grade, 7 %>
+ <%= f.label(7) %>
+    <%= f.radio_button :grade, 8 %>
+ <%= f.label(8) %>
+    <%= f.radio_button :grade, 9 %>
+ <%= f.label(9) %>
+    <%= f.radio_button :grade, 10 %>
+ <%= f.label(10) %>
+
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<h2>Reviews</h2>
+<%if @movie.reviews.blank?%>
+              <p>No reviews yet....</p>
+     <%else %>
+<% @movie.reviews.each do |review| %>
+  <p>
+    <b>Author:</b>
+    <%= review.author %>
+  </p>
+
+  <p>
+    <b>Review:</b>
+    <%= review.review %>
+  </p>
+
+
+     <%end%>
+<% end %>
+
+
+
+
+      <h2>Add review</h2>
+<%= form_for([@movie, @movie.reviews.build]) do |f| %>
+  <div class="field">
+    <%= f.label :author %><br />
+    <%= f.text_field :author %>
+  </div>
+  <div class="field">
+    <%= f.label :review %><br />
+    <%= f.text_area :review %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+
+<%= link_to 'Edit', edit_movie_path(@movie) %>
+<%= link_to 'Add review', new_movie_review_path(@movie)%>|
+<%= link_to 'Back', movies_path %>

@@ -1,0 +1,17 @@
+// Place all the styles related to the Movies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.movie {
+border:1px solid black;
+margin-bottom:10px;
+}
+
+
+.movie > a > img{
+height:90px;
+widht:50px;
+}
+

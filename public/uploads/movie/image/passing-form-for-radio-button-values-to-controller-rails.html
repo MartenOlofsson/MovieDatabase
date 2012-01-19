@@ -1,0 +1,565 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <title>Passing form_for radio button values to Controller Rails - Stack Overflow</title>
+    <link rel="shortcut icon" href="http://cdn.sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="apple-touch-icon" href="http://cdn.sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <link rel="search" type="application/opensearchdescription+xml" title="Stack Overflow" href="http://stackoverflow.com/opensearch.xml">
+    <script src="passing-form-for-radio-button-values-to-controller-rails_files/ga.js" async="" type="text/javascript"></script><script src="passing-form-for-radio-button-values-to-controller-rails_files/adzerk1_2_4_43adzerk2_2_17_45.js" async="" type="text/javascript"></script><script type="text/javascript" src="passing-form-for-radio-button-values-to-controller-rails_files/jquery.js"></script>
+    <script type="text/javascript" src="passing-form-for-radio-button-values-to-controller-rails_files/stub.js"></script>
+    <link rel="stylesheet" type="text/css" href="passing-form-for-radio-button-values-to-controller-rails_files/all.css">
+    
+    <link rel="canonical" href="http://stackoverflow.com/questions/7686127/passing-form-for-radio-button-values-to-controller-rails">
+    <link rel="alternate" type="application/atom+xml" title="Feed for question 'Passing form_for radio button values to Controller Rails'" href="http://stackoverflow.com/feeds/question/7686127">
+    <meta name="title" content="Passing form_for radio button values to Controller Rails - Stack Overflow">
+    <link rel="image_src" href="http://sstatic.net/stackoverflow/img/apple-touch-icon.png">
+    <script type="text/javascript">
+        
+        StackExchange.ready(function () {
+
+            StackExchange.question.init({showAnswerHelp:true,totalCommentCount:4,shownCommentCount:4,highlightColor:'#F4A83D',backgroundColor:'#FFF',questionId:7686127});
+
+            styleCode();
+        });
+    </script>
+
+
+    <script type="text/javascript">
+        StackExchange.init({"stackAuthUrl":"https://stackauth.com","serverTime":1326625918,"styleCode":true,"newTagEditor":true,"enableUserHovercards":true,"enableTabCompletion":true,"site":{"name":"Stack Overflow","description":"Q&A for professional and enthusiast programmers"},"user":{"isAnonymous":true,"fkey":"edb8ee19076d7c9d65709c75996035f3","inboxUnviewedCount":-1}});
+        StackExchange.using.setCacheBreakers({"js/prettify-full.js":"6c71f9dce92f","js/moderator.js":"723991e143f9","js/full-anon.js":"69fa7d02a55e","js/full.js":"58790d9b39c9","js/wmd.js":"a14c80341043","js/third-party/jquery.autocomplete.min.js":"e5f01e97f7c3","js/mobile.js":"c58294e4b2d6","js/help.js":"7f83495f785a","js/tageditor.js":"bdcf5e00cb94","js/tageditornew.js":"4cc1b1585293","js/inline-tag-editing.js":"b19f6e3b50a5","js/mathjax-editing.js":"0eaa7b2e434e","js/revisions.js":"ba0b3238d60e","js/suggested-edits.js":"279c8a034d89"});
+    </script>
+
+<script src="passing-form-for-radio-button-values-to-controller-rails_files/full-anon.js" type="text/javascript" async=""></script><script src="passing-form-for-radio-button-values-to-controller-rails_files/prettify-full.js" type="text/javascript" async=""></script><link rel="stylesheet" type="text/css" href="passing-form-for-radio-button-values-to-controller-rails_files/sidebar.css"></head>
+<body class="question-page">
+    <noscript><div id="noscript-padding"></div></noscript>
+    <div id="notify-container"></div>
+    <div id="overlay-header"></div>
+    <div id="custom-header"></div>
+
+    <div class="container">
+        <div id="header">
+            <div id="portalLink">
+                <a class="genu" onclick="StackExchange.ready(function(){genuwine.click();});return false;">Stack Exchange</a>
+            </div>
+            <div id="topbar">
+                <div id="hlinks">
+                    <span id="hlinks-user">
+                  
+                  </span>
+                  <span id="hlinks-nav">
+                  <a href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f7686127%2fpassing-form-for-radio-button-values-to-controller-rails">log in</a>
+ <span class="lsep">|</span>
+<a href="http://careers.stackoverflow.com/">careers</a>
+ <span class="lsep">|</span>
+
+                  </span>
+                  <span id="hlinks-custom">
+                  <a href="http://chat.stackoverflow.com/">chat</a>
+ <span class="lsep">|</span>
+<a href="http://meta.stackoverflow.com/">meta</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/about">about</a>
+ <span class="lsep">|</span>
+<a href="http://stackoverflow.com/faq">faq</a>
+                  </span>
+                </div>
+                <div id="hsearch">
+                    <form id="search" action="/search" method="get" autocomplete="off">
+                    <div>
+                        <input autocomplete="off" name="q" class="textbox" placeholder="search" tabindex="1" maxlength="140" size="28" type="text">
+                    </div>
+                    </form>
+                </div>
+            </div>
+            <br class="cbt">
+            <div id="hlogo">
+                <a href="http://stackoverflow.com/">Stack Overflow</a>
+            </div>
+            <div id="hmenus">
+                <div class="nav mainnavs">
+                    <ul>
+                        <li class="youarehere"><a id="nav-questions" href="http://stackoverflow.com/questions">Questions</a></li>
+                        <li><a id="nav-tags" href="http://stackoverflow.com/tags">Tags</a></li>
+                        <li><a id="nav-users" href="http://stackoverflow.com/users">Users</a></li>
+                        <li><a id="nav-badges" href="http://stackoverflow.com/badges">Badges</a></li>
+                        <li><a id="nav-unanswered" href="http://stackoverflow.com/unanswered">Unanswered</a></li>
+                    </ul>
+                </div>
+                <div class="nav askquestion">
+                    <ul>
+                        <li>
+                            <a id="nav-askquestion" href="http://stackoverflow.com/questions/ask">Ask Question</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        
+
+
+        <div id="content">
+            
+
+
+
+<div id="question-header">
+    <h1><a href="http://stackoverflow.com/questions/7686127/passing-form-for-radio-button-values-to-controller-rails" class="question-hyperlink">Passing form_for radio button values to Controller Rails</a></h1>
+</div>
+<div id="mainbar">
+
+
+<div class="question" id="question">
+
+    <div class="everyonelovesstackoverflow" id="adzerk1"><a href="http://engine.adzerk.net/redirect/0/5924/2444/8277/cc9b43d1b488432ebad0235a5cdce0c6/43/1178/8810/634622227622307030?keywords=ruby-on-rails-3%2cradio-button%2cform-for" rel="nofollow" target="_blank" title=""><img src="passing-form-for-radio-button-values-to-controller-rails_files/0a96cc99c1784d6abe3cae6b8c8bf013.png" title="" alt="" border="0" height="90" width="728"></a></div>
+
+    
+    <table>
+    <tbody><tr>
+    <td class="votecell">
+        
+<div class="vote">
+    <input value="7686127" type="hidden">
+    <a class="vote-up-off" title="This question shows research effort; it is useful and clear (click again to undo)">up vote</a>
+    <span class="vote-count-post">0</span>
+    <a class="vote-down-off" title="This question does not show any research effort; it is unclear or not useful (click again to undo)">down vote</a>
+
+    <a class="star-off" href="#" title="This is a favorite question (click again to undo)">favorite</a>
+    <div class="favoritecount"><b></b></div>    
+
+    <script type="text/javascript">
+        StackExchange.ready(function() {
+            var shareUrl = "http%3a%2f%2fstackoverflow.com%2fq%2f7686127";
+            var shareMsg = "Passing+form_for+radio+button+values+to+Controller+Rails";
+            StackExchange.share.facebook($("#fb-share-7686127"), shareUrl, shareMsg);
+            StackExchange.share.twitter($("#twitter-share-7686127"), shareUrl, shareMsg);
+        });
+    </script>
+    <a id="fb-share-7686127" class="fb-share" title="share link to this question on Facebook">share [fb]</a>
+    <a id="twitter-share-7686127" class="twitter-share" title="share link to this question on Twitter">share [tw]</a>    
+
+</div>
+
+    </td>
+<td class="postcell">
+<div>          
+    <div class="post-text">
+        <pre class="lang-rb prettyprint"><code><span class="pln">&nbsp; &nbsp; </span><span class="pun">&lt;%=</span><span class="pln"> form_for </span><span class="lit">@huntingtonflatbedboxtruck</span><span class="pln"> </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">|</span><span class="pln">f</span><span class="pun">|</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"><br>&nbsp; </span><span class="pun">&lt;%</span><span class="pln"> </span><span class="kwd">if</span><span class="pln"> </span><span class="lit">@huntingtonflatbedboxtruck</span><span class="pun">.</span><span class="pln">errors</span><span class="pun">.</span><span class="pln">any</span><span class="pun">?</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">&lt;</span><span class="pln">div vin</span><span class="pun">=</span><span class="str">"error_explanation"</span><span class="pun">&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">&lt;</span><span class="pln">h2</span><span class="pun">&gt;&lt;%=</span><span class="pln"> pluralize</span><span class="pun">(</span><span class="lit">@huntingtonflatbedboxtruck</span><span class="pun">.</span><span class="pln">errors</span><span class="pun">.</span><span class="pln">count</span><span class="pun">,</span><span class="pln"> </span><span class="str">"error"</span><span class="pun">)</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"> prohibited this huntingtonflatbedboxtruck from being saved</span><span class="pun">:&lt;/</span><span class="pln">h2</span><span class="pun">&gt;</span><span class="pln"><br><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">&lt;</span><span class="pln">ul</span><span class="pun">&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">&lt;%</span><span class="pln"> </span><span class="lit">@huntingtonflatbedboxtruck</span><span class="pun">.</span><span class="pln">errors</span><span class="pun">.</span><span class="pln">full_messages</span><span class="pun">.</span><span class="pln">each </span><span class="kwd">do</span><span class="pln"> </span><span class="pun">|</span><span class="pln">msg</span><span class="pun">|</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; &nbsp; </span><span class="pun">&lt;</span><span class="pln">li</span><span class="pun">&gt;&lt;%=</span><span class="pln"> msg </span><span class="pun">%&gt;&lt;/</span><span class="pln">li</span><span class="pun">&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">&lt;%</span><span class="pln"> </span><span class="kwd">end</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"><br>&nbsp; &nbsp; &nbsp; </span><span class="pun">&lt;</span><span class="str">/ul&gt;<br>&nbsp; &nbsp; &lt;/</span><span class="pln">div</span><span class="pun">&gt;</span><span class="pln"><br>&nbsp; </span><span class="pun">&lt;%</span><span class="pln"> </span><span class="kwd">end</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"><br><br>&nbsp; </span><span class="pun">&lt;</span><span class="pln">div </span><span class="kwd">class</span><span class="pun">=</span><span class="str">"field"</span><span class="pun">&gt;</span><span class="pln"> <br>&nbsp; &nbsp; </span><span class="pun">&lt;%=</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">label </span><span class="str">"Oil Change"</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">&lt;</span><span class="pln">br</span><span class="pun">&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">&lt;%=</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">radio_button </span><span class="pun">:</span><span class="pln">oilchange</span><span class="pun">,</span><span class="pln"> </span><span class="lit">1</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"> </span><span class="pun">&lt;%=</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">label </span><span class="str">"Pending"</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"><br>&nbsp; &nbsp; </span><span class="pun">&lt;%=</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">radio_button </span><span class="pun">:</span><span class="pln">oilchange</span><span class="pun">,</span><span class="pln"> </span><span class="lit">0</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"> </span><span class="pun">&lt;%=</span><span class="pln"> f</span><span class="pun">.</span><span class="pln">label </span><span class="str">"Complete"</span><span class="pln"> </span><span class="pun">%&gt;</span><span class="pln"><br>&nbsp; </span><span class="pun">&lt;</span><span class="str">/div&gt;<br>&nbsp; &lt;div class="field"&gt;<br>&nbsp; &nbsp; &lt;%= f.label "Rotate/</span><span class="typ">Balance</span><span class="pln"> </span><span class="typ">Tires</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &lt;br&gt;<br>&nbsp; &nbsp; &lt;%= f.radio_button :rotatetires, 1 %&gt; &lt;%= f.label "</span><span class="typ">Pending</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &lt;%= f.radio_button :rotatetires, 0 %&gt; &lt;%= f.label "</span><span class="typ">Complete</span><span class="str">" %&gt;<br>&nbsp; &lt;/div&gt;<br>&nbsp; &lt;div class="</span><span class="pln">field</span><span class="str">"&gt;<br>&nbsp; &nbsp; &lt;%= f.label "</span><span class="typ">Air</span><span class="pln"> </span><span class="typ">Filter</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &lt;br&gt;<br>&nbsp; &nbsp; &lt;%= f.radio_button :airfilter, 1 %&gt; &lt;%= f.label "</span><span class="typ">Pending</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &lt;%= f.radio_button :airfilter, 0 %&gt; &lt;%= f.label "</span><span class="typ">Complete</span><span class="str">" %&gt;<br>&nbsp; &lt;/div&gt;<br>&nbsp; &lt;div class="</span><span class="pln">field</span><span class="str">"&gt;<br>&nbsp; &nbsp; &lt;%= f.label "</span><span class="typ">Fuel</span><span class="pln"> </span><span class="typ">Filter</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &lt;br&gt;<br>&nbsp; &nbsp; &lt;%= f.radio_button :fuelfilter, 1 %&gt; &lt;%= f.label "</span><span class="typ">Pending</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &lt;%= f.radio_button :fuelfilter, 0 %&gt; &lt;%= f.label "</span><span class="typ">Complete</span><span class="str">" %&gt;<br>&nbsp; &lt;/div&gt;<br>&nbsp; &lt;div class="</span><span class="pln">field</span><span class="str">"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;%= f.label "</span><span class="typ">Radiator</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &nbsp; &lt;br&gt;<br>&nbsp; &nbsp; &nbsp; &lt;%= f.radio_button :radiator, 1 %&gt; &lt;%= f.label "</span><span class="typ">Pending</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &nbsp; &lt;%= f.radio_button :radiator, 0 %&gt; &lt;%= f.label "</span><span class="typ">Complete</span><span class="str">" %&gt;<br>&nbsp; &lt;/div&gt;<br>&nbsp; &lt;div class="</span><span class="pln">field</span><span class="str">"&gt;<br>&nbsp; &nbsp; &nbsp; &lt;%= f.label "</span><span class="typ">Belts</span><span class="pln"> </span><span class="pun">&amp;</span><span class="pln"> </span><span class="typ">Hoses</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &nbsp; &lt;br&gt;<br>&nbsp; &nbsp; &nbsp; &lt;%= f.radio_button :beltshose, 1 %&gt; &lt;%= f.label "</span><span class="typ">Pending</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &nbsp; &lt;%= f.radio_button :beltshose, 0 %&gt; &lt;%= f.label "</span><span class="typ">Complete</span><span class="str">" %&gt;<br>&nbsp; &lt;/div&gt;<br>&nbsp; &nbsp; &lt;div class="</span><span class="pln">field</span><span class="str">"&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;%= f.label "</span><span class="typ">Driveline</span><span class="pun">,</span><span class="pln"> CV </span><span class="typ">Boots</span><span class="pun">,</span><span class="pln"> </span><span class="typ">Joints</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;br&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;%= f.radio_button :joints, 1 %&gt; &lt;%= f.label "</span><span class="typ">Pending</span><span class="str">" %&gt;<br>&nbsp; &nbsp; &nbsp; &nbsp; &lt;%= f.radio_button :joints, 0 %&gt; &lt;%= f.label "</span><span class="typ">Complete</span><span class="str">" %&gt;<br>&nbsp; &lt;/div&gt;<br>&lt;%= submit_tag 'Update' %&gt;<br>&lt;% end %&gt;<br></span></code></pre>
+
+<p>I have a run of the mill form for above. I want to be able to pass 
+the current value of the radio buttons as params to a custom method in 
+my controller. I've tried remoting the submit_tag, declaring a custom 
+method via :action =&gt; whatever, and also have swapped it out for a 
+f.submit with the same results. I know that the radio buttons are 
+updating and saving their values. I just can't figure out how to access 
+it from the controller. </p>
+
+<p>I'm still new to rails and I know this shouldn't be as hard as I think it is.</p>
+
+    </div>            
+    <div class="post-taglist">
+        <a href="http://stackoverflow.com/questions/tagged/ruby-on-rails-3" class="post-tag" title="show questions tagged 'ruby-on-rails-3'" rel="tag">ruby-on-rails-3</a> <a href="http://stackoverflow.com/questions/tagged/radio-button" class="post-tag" title="show questions tagged 'radio-button'" rel="tag">radio-button</a> <a href="http://stackoverflow.com/questions/tagged/form-for" class="post-tag" title="show questions tagged 'form-for'" rel="tag">form-for</a> 
+    </div>
+    <table class="fw">
+    <tbody><tr>
+    <td class="vt">
+        <div class="post-menu"><a href="http://stackoverflow.com/q/7686127" title="short permalink to this question" id="link-post-7686127">link</a><span class="lsep">|</span><a href="http://stackoverflow.com/posts/7686127/edit">improve this question</a></div>
+    </td>
+    <td class="post-signature owner">
+    <div class="user-info"><div class="user-action-time">asked <span title="2011-10-07 10:39:30Z" class="relativetime">Oct 7 '11 at 10:39</span></div><div class="user-gravatar32"><a href="http://stackoverflow.com/users/952492/edpittore"><div class=""><img src="passing-form-for-radio-button-values-to-controller-rails_files/2593d672775184d7a5965f36d029e547.png" alt=""></div></a></div><div class="user-details"><a href="http://stackoverflow.com/users/952492/edpittore">EDPittore</a><br><span class="reputation-score" title="reputation score" dir="ltr">1</span></div></div>
+    </td>
+    </tr>
+    </tbody></table>
+</div>
+</td>    </tr>
+
+
+<tr>
+<td class="votecell"></td>
+<td>
+    <div id="comments-7686127" class="comments">
+        <table>
+        <tbody>
+                    
+    <tr id="comment-9343570" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Please 
+clarify your question. Do you want the form to submit with Ajax (i.e. 
+remotely)? Assuming this page is #edit, it will automatically send the 
+form to the #update action. How does that differ from the behavior you 
+want?</span> –&nbsp;<a href="http://stackoverflow.com/users/885036/bricker" title="2667 reputation" class="comment-user">bricker</a> <span class="comment-date" dir="ltr"><span title="2011-10-07 10:50:33Z">Oct 7 '11 at 10:50</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-9343779" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">This 
+form is rendered in a modified show page. I don't really have any 
+preference to how the form is submitted, just as long as I am able to 
+access the radio button values in my controller. Something along the 
+lines of params[:oilchange].</span> –&nbsp;<a href="http://stackoverflow.com/users/952492/edpittore" title="1 reputation" class="comment-user owner">EDPittore</a> <span class="comment-date" dir="ltr"><span title="2011-10-07 11:06:52Z">Oct 7 '11 at 11:06</span></span><span class="edited-yes" title="this comment was edited"></span></div></td>
+    </tr>
+            
+    <tr id="comment-9346701" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">I've 
+tried the params[:oilchange} under the update action with the form being
+ rendered on the #edit page. I still cannot access the value of the 
+radio button. I don't get an error, its just an if statement checking 
+for a change in value.</span> –&nbsp;<a href="http://stackoverflow.com/users/952492/edpittore" title="1 reputation" class="comment-user owner">EDPittore</a> <span class="comment-date" dir="ltr"><span title="2011-10-07 14:21:28Z">Oct 7 '11 at 14:21</span></span></div></td>
+    </tr>
+            
+    <tr id="comment-10122267" class="comment">
+        <td></td>
+        <td class="comment-text"><div><span class="comment-copy">Did you figure it out? How do you access the form radio_button selections?</span> –&nbsp;<a href="http://stackoverflow.com/users/554327/newb" title="77 reputation" class="comment-user">NewB</a> <span class="comment-date" dir="ltr"><span title="2011-11-22 16:55:38Z">Nov 22 '11 at 16:55</span></span></div></td>
+    </tr>
+
+        </tbody>
+    
+        </table>
+    </div>
+    
+    
+    <div style="color: rgb(118, 118, 118);" class="was-this-helpful">Was this post useful to you? &nbsp;&nbsp;<input style="opacity: 0.842274;" class="anon-vote" value="Yes" type="button"> &nbsp;<input style="opacity: 0.842274;" class="anon-vote" value="No" type="button"></div>
+    
+</td>
+</tr>    </tbody></table>    
+</div>
+
+
+
+<div id="answers" class="no-answers">
+
+    <a name="tab-top"></a>
+    <div id="answers-header">
+        <div class="subheader answers-subheader">
+            <h2></h2>
+            <div id="tabs">
+                
+            </div>
+        </div>    
+    </div>    
+
+        <h2 class="bottom-notice" style="padding-top:8px; margin-bottom:-8px;">
+            Know someone who can answer? 
+            Share a <a href="http://stackoverflow.com/q/7686127">link</a> to this question via 
+            <a href="mailto:?subject=Stack%20Overflow%20Question&amp;body=Passing%20form_for%20radio%20button%20values%20to%20Controller%20Rails%0Ahttp%3a%2f%2fstackoverflow.com%2fq%2f7686127">email</a>, 
+            <a href="http://twitter.com/share?url=http%3a%2f%2fstackoverflow.com%2fq%2f7686127&amp;text=Passing%20form_for%20radio%20button%20values%20to%20Controller%20Rails">Twitter</a>, or
+            <a href="http://www.facebook.com/sharer.php?u=http%3a%2f%2fstackoverflow.com%2fq%2f7686127&amp;t=Passing%20form_for%20radio%20button%20values%20to%20Controller%20Rails">Facebook</a>.
+        </h2>
+    <a name="new-answer"></a>
+    <form id="post-form" action="/questions/7686127/answer/submit" method="post" class="post-form">
+        <h2 class="space">Your Answer</h2>
+       
+
+<script type="text/javascript">
+    StackExchange.ready(function() {
+    
+        initTagRenderer("".split(" "), "".split(" "));
+
+              
+            prepareEditor({
+                
+                heartbeatType: 'answer',
+                bindNavPrevention: true,
+                postfix: "",
+                onDemand: true                ,immediatelyShowMarkdownHelp:true
+            });
+            
+    });  
+</script>
+
+
+<div id="post-editor" class="post-editor">  
+
+    
+    <div class="wmd-container">
+        <div id="wmd-button-bar" class="wmd-button-bar"><ul id="wmd-button-row" class="wmd-button-row"><li style="left: 0px;" class="wmd-button" id="wmd-bold-button"><span style="background-position: 0px -20px;"></span></li><li style="left: 25px;" class="wmd-button" id="wmd-italic-button"><span style="background-position: -20px -20px;"></span></li><li style="left: 50px;" class="wmd-spacer" id="wmd-spacer1"><span style="background-position: -40px -20px;"></span></li><li style="left: 75px;" class="wmd-button" id="wmd-link-button"><span style="background-position: -40px -20px;"></span></li><li style="left: 100px;" class="wmd-button" id="wmd-quote-button"><span style="background-position: -60px -20px;"></span></li><li style="left: 125px;" class="wmd-button" id="wmd-code-button"><span style="background-position: -80px -20px;"></span></li><li style="left: 150px;" class="wmd-button" id="wmd-image-button"><span style="background-position: -100px -20px;"></span></li><li style="left: 175px;" class="wmd-spacer" id="wmd-spacer2"><span style="background-position: -120px -20px;"></span></li><li style="left: 200px;" class="wmd-button" id="wmd-olist-button"><span style="background-position: -120px -20px;"></span></li><li style="left: 225px;" class="wmd-button" id="wmd-ulist-button"><span style="background-position: -140px -20px;"></span></li><li style="left: 250px;" class="wmd-button" id="wmd-heading-button"><span style="background-position: -160px -20px;"></span></li><li style="left: 275px;" class="wmd-button" id="wmd-hr-button"><span style="background-position: -180px -20px;"></span></li><li style="left: 300px;" class="wmd-spacer" id="wmd-spacer3"><span style="background-position: -200px -20px;"></span></li><li style="left: 325px;" class="wmd-button" id="wmd-undo-button"><span style="background-position: -200px -20px;"></span></li><li style="left: 350px;" class="wmd-button" id="wmd-redo-button"><span style="background-position: -220px -20px;"></span></li></ul></div>
+        <textarea id="wmd-input" class="wmd-input" name="post-text" cols="92" rows="15" tabindex="101"></textarea>
+    </div>
+
+    <div class="fl" style="margin-top: 8px; height:24px;">&nbsp;</div>
+    <div id="draft-saved" class="draft-saved community-option fl" style="margin-top: 8px; height:24px; display:none;">draft saved</div>
+
+
+
+    <div id="wmd-preview" class="wmd-preview"></div>
+    <div></div>
+    <div class="edit-block">
+        <input id="fkey" name="fkey" value="edb8ee19076d7c9d65709c75996035f3" type="hidden">
+        <input id="author" name="author" type="text">
+    </div>
+</div>   
+    <div class="form-item">
+        <table>
+        <tbody><tr>
+        <td class="vm open-id-login">
+            <a id="login-link" style="font-size: 200%; margin-left: 30px;" href="http://stackoverflow.com/users/login?returnurl=%2fquestions%2f7686127%2fpassing-form-for-radio-button-values-to-controller-rails">log in</a>
+            <script type="text/javascript">
+                StackExchange.ready(function () {
+                    StackExchange.helpers.onClickDraftSave('#login-link');
+                });
+            </script>
+        </td>
+
+    
+        <td class="orcell">
+            <div class="orword">or</div>
+            <div class="orline"></div>
+        </td>
+        <td class="vm">
+            <div>
+                <label for="display-name">Name</label>
+                <input id="display-name" name="display-name" size="30" maxlength="30" tabindex="105" type="text">
+            </div>
+            <div>
+                <label for="m-address">Email</label>
+                <input id="m-address" name="m-address" size="40" maxlength="100" tabindex="106" type="text">
+                <span class="edit-field-overlay">required, but never shown</span>
+            </div>
+            <div>
+                <label for="home-page">Home Page</label>
+                <input id="home-page" name="home-page" size="40" maxlength="200" tabindex="107" type="text">
+            </div>
+        </td>
+    
+        </tr>
+        </tbody></table>
+    </div>
+               
+        <div class="form-submit cbt"><input id="submit-button" value="Post Your Answer" tabindex="110" type="submit"></div>
+    </form>
+
+
+        <h2 class="bottom-notice">
+            Browse other questions tagged <a href="http://stackoverflow.com/questions/tagged/ruby-on-rails-3" class="post-tag" title="show questions tagged 'ruby-on-rails-3'" rel="tag">ruby-on-rails-3</a> <a href="http://stackoverflow.com/questions/tagged/radio-button" class="post-tag" title="show questions tagged 'radio-button'" rel="tag">radio-button</a> <a href="http://stackoverflow.com/questions/tagged/form-for" class="post-tag" title="show questions tagged 'form-for'" rel="tag">form-for</a> 
+                or <a href="http://stackoverflow.com/questions/ask">ask your own question</a>.
+        </h2>
+</div>
+</div>
+<div id="sidebar">
+
+
+
+    <div class="module newuser newuser-greeting" style="display:none">
+        <h4>Hello World!</h4>
+        <div>
+            <p></p><p>This is a collaboratively edited question and answer site for <b>professional and enthusiast programmers</b>. It's 100% free, no registration required.</p><p></p>
+            <p class="ar"><a href="http://stackoverflow.com/about">about »</a>&nbsp;&nbsp;&nbsp;<a href="http://stackoverflow.com/faq">faq »</a>
+            </p>
+        </div>
+    </div>
+    <div class="module">
+        <p class="label-key">tagged</p>
+        <div class="tagged"><a href="http://stackoverflow.com/questions/tagged/ruby-on-rails-3" class="post-tag" title="show questions tagged 'ruby-on-rails-3'" rel="tag">ruby-on-rails-3</a>&nbsp;<span class="item-multiplier">×&nbsp;19879</span><br>
+<a href="http://stackoverflow.com/questions/tagged/radio-button" class="post-tag" title="show questions tagged 'radio-button'" rel="tag">radio-button</a>&nbsp;<span class="item-multiplier">×&nbsp;1306</span><br>
+<a href="http://stackoverflow.com/questions/tagged/form-for" class="post-tag" title="show questions tagged 'form-for'" rel="tag">form-for</a>&nbsp;<span class="item-multiplier">×&nbsp;165</span><br>
+</div>
+        <table id="qinfo">
+            <tbody><tr>
+                <td><p class="label-key">asked</p></td>
+                <td style="padding-left: 10px;"><p class="label-key" title="2011-10-07 10:39:30Z"><b>3 months ago</b></p></td>
+            </tr>
+            <tr>
+                <td><p class="label-key">viewed</p></td>
+
+                <td style="padding-left: 10px;"><p class="label-key"><b>151 times</b></p></td>
+            </tr>
+        </tbody></table>
+    </div>
+    
+        <script type="text/javascript">
+            var scriptSrc = "http://engine2.adzerk.net/z/8277/adzerk1_2_4_43,adzerk2_2_17_45?keywords=ruby-on-rails-3,radio-button,form-for";
+            if (document.referrer) {
+                if (/\?/.test(scriptSrc))
+                    scriptSrc += "&";
+                else
+                    scriptSrc += "?";
+                scriptSrc += "xReferrer=" + document.referrer;
+            }
+            var z = document.createElement("script"); z.type = "text/javascript"; z.async = true; z.src = scriptSrc; var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(z, s);
+        </script>
+    
+    <div class="everyonelovesstackoverflow" id="adzerk2"><a href="http://engine.adzerk.net/redirect/0/2566/2444/8277/dfacadcb69b344b1b82ab611b7fface7/45/1178/12931/634622227622395370?keywords=ruby-on-rails-3%2cradio-button%2cform-for" rel="nofollow" target="_blank" title=""><img src="passing-form-for-radio-button-values-to-controller-rails_files/2566.dms" title="" alt="" border="0" height="250" width="220"></a></div>
+
+    
+    <div>
+        <script type="text/javascript">
+            var careers_adurl="http://careers.stackoverflow.com/ad/js",careers_cssurl="http://cdn.sstatic.net/careers/ads/sidebar.min.css?351d35",careers_leaderboardcssurl="http://cdn.sstatic.net/careers/ads/ninja.min.css?351d35",careers_companycssurl="http://cdn.sstatic.net/careers/ads/company";(function(){var b="min-height:220px;margin:15px 0",c=$("<div>").addClass("hireme").attr("style",b),a=$("<div>").html(c);document.write(a.html());$.ajax({url:"http://cdn.sstatic.net/careers/ads/adloader.min.js?351d35",dataType:"script",cache:true})})();
+        </script>
+    </div>
+
+      
+
+    <div class="module">
+    <h4 id="h-related">Related</h4>
+    <div class="related">
+    <div class="spacer">
+<a href="http://stackoverflow.com/questions/3741979/form-for-and-scopes-rails-3" class="question-hyperlink">form_for and scopes, rails 3</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4019413/rails-jquery-using-jquery-to-submit-the-form-w-o-the-submit-button" class="question-hyperlink">Rails + jQuery - Using jQuery to submit the form w/o the Submit button</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4436817/ruby-on-rails-are-form-forproduct-and-form-forproduct-equiv" class="question-hyperlink">Ruby on Rails: Are “form_for(:product, …)” and “form_for(@product, …)” equivalent?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4508231/rails-radio-button-configuration-with-one-to-one-relation" class="question-hyperlink">rails radio_button configuration with one to one relation</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4909988/rails-3-nested-resource-route-problem-as-form-for" class="question-hyperlink">Rails 3 nested resource route problem as form_for</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/4943625/latest-rails-3-actionviewtemplateerror-couldnt-parse-yaml-at-line-105-col" class="question-hyperlink">Latest Rails 3: ActionView::Template::Error (couldn't parse YAML at line 105 column 13)</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5090820/rails-radio-button-selection-for-nested-objects" class="question-hyperlink">Rails: radio button selection for nested objects</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5214943/how-to-set-default-value-of-form-for-select" class="question-hyperlink">how to set default value of form_for select</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5217500/form-input-attributes" class="question-hyperlink">Form input attributes</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5475764/problem-using-a-form-with-nested-routes-in-rails-3" class="question-hyperlink">Problem using a form with nested routes in rails 3</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/5553484/radio-button-group-for-nested-form-in-rails" class="question-hyperlink">radio button group for nested form in rails</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6349679/how-does-one-get-rails3-to-display-initial-values-in-form-fields-of-the-new-acti" class="question-hyperlink">How does one get rails3 to display initial values in form fields of the new action?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6485299/simple-calculator-form" class="question-hyperlink">simple calculator form</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6698845/rails-update-action-does-not-update-boolean-field" class="question-hyperlink">Rails update action does not update boolean field</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/6984878/how-can-i-update-only-a-single-field-of-a-user-profile-in-rails-3" class="question-hyperlink">How can I update only a single field of a user profile in Rails 3?</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7034127/form-for-error-accessing-a-controller-variable-in-the-view-rails-3" class="question-hyperlink">form_for - error accessing a controller variable in the view (rails 3)</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7048843/form-for-with-multiple-controller-actions-for-submit" class="question-hyperlink">form_for with multiple controller actions for submit</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7140176/saving-radio-buttons-values-in-rails" class="question-hyperlink">Saving radio buttons values in rails</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7403111/rails-3-form-uses-edit-instead-of-update-when-the-form-is-submitted" class="question-hyperlink">Rails 3 form uses “edit” instead of “update” when the form is submitted</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7417377/dynamic-label-in-a-form-for" class="question-hyperlink">dynamic label in a form_for</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7478962/rails-3-1-acts-as-tree-form-and-values-to-edit-a-menu-on-a-single-page" class="question-hyperlink">Rails 3.1 acts_as_tree, form and values to edit a menu on a single page</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7491799/rails-submitting-a-form-for-to-a-non-restful-method" class="question-hyperlink">Rails — submitting a form_for to a non-RESTful method</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/7819278/creating-2-forms-using-form-tag-inside-a-table-rails" class="question-hyperlink">Creating 2 forms using form_tag inside a table (rails)</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8234055/how-to-insert-null-value-into-db-using-radio-button-and-form-for-formhelper" class="question-hyperlink">how to insert null value into DB using radio_button and form_for formhelper</a>
+</div>
+<div class="spacer">
+<a href="http://stackoverflow.com/questions/8682076/remove-auto-generated-id-form-for-id-rails-3-1" class="question-hyperlink">remove auto generated id form_for id rails 3.1</a>
+</div>
+
+    </div>
+    </div>
+</div>
+
+<div id="feed-link">
+    <div id="feed-link-text"><a href="http://stackoverflow.com/feeds/question/7686127" title="feed of this question and its answers"><span class="feed-icon"></span>question feed</a></div>
+</div>
+<script type="text/javascript" src="passing-form-for-radio-button-values-to-controller-rails_files/863e.txt"></script>
+<noscript>
+    <div><img src="/posts/7686127/ivc/863e" class="dno" alt=""></div>
+</noscript>
+<div style="display:none" id="prettify-lang">lang-rb</div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="footerwrap">
+            <div id="footer-menu">
+                <a href="http://stackoverflow.com/about">about</a> |
+                <a href="http://stackoverflow.com/faq">faq</a> |
+                <a href="http://blog.stackexchange.com/">blog</a> |
+                    <a href="http://chat.stackoverflow.com/">chat</a> |
+                <a href="http://data.stackexchange.com/">data</a> |
+                <a href="http://blog.stackoverflow.com/category/podcasts/">podcast</a> |
+                <a href="http://shop.stackexchange.com/">shop</a> |
+                <a href="http://stackexchange.com/legal">legal</a> |
+                <a href="http://engine.adzerk.net/redirect/0/2776/2751/0/4de3c60f719c4dfcb1a57531c7050090/0">advertising info</a> |
+
+                <a onclick="StackExchange.switchMobile('on', '/questions/7686127/passing-form-for-radio-button-values-to-controller-rails')">mobile</a> |
+
+                <b><a href="mailto:team@stackoverflow.com">contact us</a></b>
+                  | <b><a href="http://meta.stackoverflow.com/">feedback</a></b>
+                <div id="footer-sites">
+                    
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackoverflow.com/">stackoverflow.com</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://stackapps.com/">api/apps</a>&nbsp; 
+                        <span style="color:#FE7A15;font-size:140%">■</span>&nbsp;<a href="http://careers.stackoverflow.com/">careers</a>&nbsp; 
+                        <span style="color:#E8272C;font-size:140%">■</span>&nbsp;<a href="http://serverfault.com/">serverfault.com</a>&nbsp; 
+                        <span style="color:#00AFEF;font-size:140%">■</span>&nbsp;<a href="http://superuser.com/">superuser.com</a>&nbsp; 
+                        <span style="color:#969696;font-size:140%">■</span>&nbsp;<a href="http://meta.stackoverflow.com/">meta</a>&nbsp; 
+                        <span style="color:#46937D;font-size:140%">■</span>&nbsp;<a href="http://area51.stackexchange.com/">area&nbsp;51</a>&nbsp; 
+                        <span style="color:#C0D0DC;font-size:140%">■</span>&nbsp;<a href="http://webapps.stackexchange.com/">webapps</a>&nbsp; 
+                        <span style="color:#000000;font-size:140%">■</span>&nbsp;<a href="http://gaming.stackexchange.com/">gaming</a>&nbsp; 
+                        <span style="color:#dd4814;font-size:140%">■</span>&nbsp;<a href="http://askubuntu.com/">ubuntu</a>&nbsp; 
+                        <span style="color:#9ce4fe;font-size:140%">■</span>&nbsp;<a href="http://webmasters.stackexchange.com/">webmasters</a>&nbsp; 
+                        <span style="color:#cf4d3f;font-size:140%">■</span>&nbsp;<a href="http://cooking.stackexchange.com/">cooking</a>&nbsp; 
+                        <span style="color:#f4f28d;font-size:140%">■</span>&nbsp;<a href="http://gamedev.stackexchange.com/">game development</a>&nbsp; 
+                        <span style="color:#0f3559;font-size:140%">■</span>&nbsp;<a href="http://math.stackexchange.com/">math</a>&nbsp; 
+                        <span style="color:#f2f2f2;font-size:140%">■</span>&nbsp;<a href="http://photo.stackexchange.com/">photography</a>&nbsp; 
+                        <span style="color:#037187;font-size:140%">■</span>&nbsp;<a href="http://stats.stackexchange.com/">stats</a>&nbsp; 
+                        <span style="color:#f1e7cc;font-size:140%">■</span>&nbsp;<a href="http://tex.stackexchange.com/">tex</a>&nbsp; 
+                        <span style="color:#e1cdae;font-size:140%">■</span>&nbsp;<a href="http://english.stackexchange.com/">english</a>&nbsp; 
+                        <span style="color:#a2d9f6;font-size:140%">■</span>&nbsp;<a href="http://cstheory.stackexchange.com/">theoretical cs</a>&nbsp; 
+                        <span style="color:#1b3e6c;font-size:140%">■</span>&nbsp;<a href="http://programmers.stackexchange.com/">programmers</a>&nbsp; 
+                        <span style="color:#293a5d;font-size:140%">■</span>&nbsp;<a href="http://unix.stackexchange.com/">unix</a>&nbsp;
+                        <span style="color:#bec0cb;font-size:140%">■</span>&nbsp;<a href="http://apple.stackexchange.com/">apple</a>&nbsp;
+                        <span style="color:#939185;font-size:140%">■</span>&nbsp;<a href="http://wordpress.stackexchange.com/">wordpress</a>&nbsp;
+                        <span style="color:#b5cda4;font-size:140%">■</span>&nbsp;<a href="http://physics.stackexchange.com/">physics</a>&nbsp;
+                        <span style="color:#4176ab;font-size:140%">■</span>&nbsp;<a href="http://diy.stackexchange.com/">home&nbsp;improvement</a>&nbsp;
+                        <span style="color:#d1d8d7;font-size:140%">■</span>&nbsp;<a href="http://gis.stackexchange.com/">gis</a>&nbsp;
+                        <span style="color:#e5e2d3;font-size:140%">■</span>&nbsp;<a href="http://electronics.stackexchange.com/">electronics</a>&nbsp;
+                        <span style="color:#a4c639;font-size:140%">■</span>&nbsp;<a href="http://android.stackexchange.com/">android</a>&nbsp;
+                        <span style="color:#2e4e60;font-size:140%">■</span>&nbsp;<a href="http://security.stackexchange.com/">security</a>&nbsp;
+                        <span style="color:#45bcb5;font-size:140%">■</span>&nbsp;<a href="http://bicycles.stackexchange.com/">bicycles</a>&nbsp;
+                        <span style="color:#00adee;font-size:140%">■</span>&nbsp;<a href="http://dba.stackexchange.com/">dba</a>&nbsp;
+                        <span style="color:#2edaf0;font-size:140%">■</span>&nbsp;<a href="http://drupal.stackexchange.com/">drupal</a>&nbsp;
+                        <span style="color:#213951;font-size:140%">■</span>&nbsp;<a href="http://sharepoint.stackexchange.com/">sharepoint</a>&nbsp;
+                        <span style="color:#73abb3;font-size:140%">■</span>&nbsp;<a href="http://scifi.stackexchange.com/">scifi &amp; fantasy</a>&nbsp;
+                        <span style="color:#23629F;font-size:140%">■</span>&nbsp;<a href="http://ux.stackexchange.com/">user experience</a>&nbsp;
+                </div>
+            </div>
+            <div id="footer-flair">
+                <a class="peer1" href="http://www.peer1.com/stackoverflow"></a>  
+	            <a href="http://creativecommons.org/licenses/by-sa/3.0/" class="cc-wiki-link"></a>
+                <div id="svnrev">rev 2012.1.13.423</div>
+            </div>
+            <div id="copyright">
+                site design / logo © 2012 stack exchange inc; 
+                user contributions licensed under <a href="http://creativecommons.org/licenses/by-sa/3.0/" rel="license">cc-wiki</a> with <a href="http://blog.stackoverflow.com/2009/06/attribution-required/" rel="license">attribution required</a>
+            </div>
+            
+
+        </div>
+    <iframe id="global-auth-frame" style="display: none;" src="passing-form-for-radio-button-values-to-controller-rails_files/read.html"></iframe></div>
+    
+    <noscript>
+        <div id="noscript-warning">Stack Overflow works best with JavaScript enabled<img src="http://pixel.quantserve.com/pixel/p-c1rF4kxgLUzNc.gif" alt="" class="dno"></div>
+    </noscript>
+    <script type="text/javascript">var _gaq=_gaq||[];_gaq.push(['_setAccount','UA-5620270-1']);
+        _gaq.push(['_setCustomVar', 1, 'tags', '|ruby-on-rails-3|radio-button|form-for|']); 
+_gaq.push(['_trackPageview']);(function(){var ga=document.createElement('script');ga.type='text/javascript';ga.async=true;ga.src='http://www.google-analytics.com/ga.js';var s=document.getElementsByTagName('script')[0];s.parentNode.insertBefore(ga,s);})();_qoptions={qacct:"p-c1rF4kxgLUzNc"};</script>
+    <script type="text/javascript" src="passing-form-for-radio-button-values-to-controller-rails_files/quant.js"></script>    
+
+</body></html>
